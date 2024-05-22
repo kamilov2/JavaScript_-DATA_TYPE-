@@ -1,0 +1,153 @@
+<!DOCTYPE html>
+<html lang="uz">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>JavaScript ma'lumot turlari bo'yicha qo'llanma</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            line-height: 1.6;
+            margin: 20px;
+        }
+        h1, h2, h3 {
+            color: #333;
+        }
+        pre {
+            background-color: #f4f4f4;
+            padding: 10px;
+            border: 1px solid #ccc;
+            border-radius: 5px;
+            position: relative;
+            overflow: auto;
+            margin-top: 10px;
+        }
+        code {
+            font-family: monospace;
+            white-space: pre-wrap; /* Kodingiz qator bo'ylab joylashishini ta'minlash uchun */
+        }
+        .copy-button {
+            position: absolute;
+            top: 10px;
+            right: 10px;
+            padding: 5px 10px;
+            background-color: #007bff;
+            color: white;
+            border: none;
+            border-radius: 5px;
+            cursor: pointer;
+        }
+    </style>
+</head>
+<body>
+    <h1>JavaScript ma'lumot turlari bo'yicha qo'llanma</h1>
+
+    <h2>1. String</h2>
+    <p>Matnni ifodalash uchun ishlatiladi.</p>
+    <pre id="codeBlock1">
+        <code>
+let str = "Salom, Dunyo!";
+console.log(str);
+        </code>
+        <button class="copy-button" onclick="copyCode('codeBlock1')">Copy</button>
+    </pre>
+
+    <h2>2. Number</h2>
+    <p>Sondan iborat qiymatlarni ifodalash uchun ishlatiladi. Butun sonlar va o'nli sonlar.</p>
+    <pre id="codeBlock2">
+        <code>
+let num = 42;
+let pi = 3.14;
+console.log(num);
+console.log(pi);
+        </code>
+        <button class="copy-button" onclick="copyCode('codeBlock2')">Copy</button>
+    </pre>
+
+    <h2>3. Boolean</h2>
+    <p>Ikkilik qiymatlarni ifodalash uchun ishlatiladi: <code>true</code> yoki <code>false</code>.</p>
+    <pre id="codeBlock3">
+        <code>
+let isTrue = true;
+let isFalse = false;
+console.log(isTrue);
+console.log(isFalse);
+        </code>
+        <button class="copy-button" onclick="copyCode('codeBlock3')">Copy</button>
+    </pre>
+
+    <h2>4. Null</h2>
+    <p>Hech qanday qiymatni ifodalash uchun ishlatiladi.</p>
+    <pre id="codeBlock4">
+        <code>
+let emptyValue = null;
+console.log(emptyValue);
+        </code>
+        <button class="copy-button" onclick="copyCode('codeBlock4')">Copy</button>
+    </pre>
+
+    <h2>5. Undefined</h2>
+    <p>Qiymati belgilanmagan o'zgaruvchini ifodalash uchun ishlatiladi.</p>
+    <pre id="codeBlock5">
+        <code>
+let undefinedValue;
+console.log(undefinedValue);
+        </code>
+        <button class="copy-button" onclick="copyCode('codeBlock5')">Copy</button>
+    </pre>
+
+    <h2>6. Object</h2>
+    <p>Murakkab ma'lumot tuzilmalarini saqlash uchun ishlatiladi. Ob'ektlar xususiyat va metodlardan iborat.</p>
+    <pre id="codeBlock6">
+        <code>
+let person = {
+    name: "Ali",
+    age: 25,
+    isStudent: true
+};
+console.log(person);
+        </code>
+        <button class="copy-button" onclick="copyCode('codeBlock6')">Copy</button>
+    </pre>
+
+    <h2>7. Array</h2>
+    <p>Bir xil turdagi ma'lumotlarni tartibli ro'yxat sifatida saqlash uchun ishlatiladi.</p>
+    <pre id="codeBlock7">
+        <code>
+let fruits = ["Olma", "Banan", "Gilos"];
+console.log(fruits);
+        </code>
+        <button class="copy-button" onclick="copyCode('codeBlock7')">Copy</button>
+    </pre>
+
+    <h2>8. Function</h2>
+    <p>Qayta ishlatiladigan kod bloklarini yaratish uchun ishlatiladi.</p>
+    <pre id="codeBlock8">
+        <code>
+function salomBer(name) {
+    return "Salom, " + name + "!";
+}
+console.log(salomBer("Dunyo"));
+        </code>
+        <button class="copy-button" onclick="copyCode('codeBlock8')">Copy</button>
+    </pre>
+
+    <script>
+        function copyCode(id) {
+            const codeBlock = document.getElementById(id);
+            const code = codeBlock.querySelector('code').innerText;
+
+            const tempTextArea = document.createElement('textarea');
+            tempTextArea.value = code;
+            document.body.appendChild(tempTextArea);
+
+            tempTextArea.select();
+            document.execCommand('copy');
+
+            document.body.removeChild(tempTextArea);
+
+            alert('Kod nusxalandi!');
+        }
+    </script>
+</body>
+</html>
